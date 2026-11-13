@@ -1,0 +1,34 @@
+A. Persiapan Lingkungan Komputasi
+
+    Buka platform Google Colab (colab.research.google.com).
+    Pastikan runtime diatur ke T4 GPU. Klik menu Runtime, pilih Ubah jenis runtime, dan pilih T4 GPU pada bagian Akselerator perangkat keras.
+    Buat notebook baru.
+
+B. Persiapan Data
+
+    Unggah berkas dataset mentah bernama DATA TIKET.csv ke panel Files di sisi kiri Google Colab.
+    Pastikan berkas tersebut memiliki pemisah titik koma (semicolon) dan tidak memiliki header di baris pertama, sesuai dengan format ekspor asli sistem CEISACare.
+
+C. Eksekusi Kode
+
+    Salin seluruh blok kode Python pada bagian "Struktur Notebook Teruji" di atas.
+    Tempelkan ke dalam satu sel kode di Google Colab.
+    Jalankan sel tersebut. Proses ini akan secara otomatis:
+        Menginstal semua pustaka yang tercantum dalam requirements.txt.
+        Memuat dan membersihkan data, termasuk menerapkan masking entitas.
+        Melatih 4 model Machine Learning tradisional dan 1 model Deep Learning (Bi-LSTM).
+        Menghasilkan dan mengunduh berkas Laporan_Hasil_Eksperimen_Reproduksi.docx.
+
+D. Verifikasi Hasil
+Buka berkas Word yang diunduh. Periksa Tabel 1 dan Tabel 2. Hasil metrik (Akurasi, Presisi, Recall, F1-Skor) harus identik atau memiliki deviasi sangat kecil (kurang dari 0,5 persen) dibandingkan dengan hasil asli, yang hanya dapat disebabkan oleh perbedaan minor dalam inisialisasi bobot acak pada lapisan Deep Learning.
+E. Pemecahan Masalah Umum (Troubleshooting)
+
+    Error Memori (Out of Memory): Jika Colab mengalami crash saat memuat FastText, restart runtime (Runtime -> Restart session) dan jalankan kembali sel kode. Pastikan tidak ada proses lain yang memakan RAM.
+    Gagal Mengunduh FastText: Pastikan koneksi internet Colab stabil. Berkas cc.id.300.vec.gz berukuran sekitar 700 MB. Jika gagal, hapus berkas yang terunduh sebagian dan jalankan ulang perintah wget.
+    Variabel Tidak Ditemukan: Pastikan Anda menjalankan seluruh skrip dalam satu sel atau menjalankan sel-sel secara berurutan dari atas ke bawah tanpa melewatkan bagian pemuatan data.
+
+Dengan mengikuti panduan ini, integritas ilmiah dan kemampuan replikasi riset klasifikasi prioritas tiket CEISACare Anda terjamin sepenuhnya.
+Copy
+Ask Qwen
+Explain
+Translate(en-US)
